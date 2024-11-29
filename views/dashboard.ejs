@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Checklist Dashboard</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Checklist Dashboard</h1>
+    <ul class="checklist">
+      <% results.forEach(result => { %>
+        <li class="checklist-item <%= result.status.toLowerCase() %>">
+          <div class="rule-details">
+            <p class="rule-title"><strong>Rule:</strong> <%= result.name %></p>
+            <p class="rule-status">
+              <strong>Status:</strong> 
+              <span class="status <%= result.status.toLowerCase() %>"><%= result.status %></span>
+            </p>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html>
